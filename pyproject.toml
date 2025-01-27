@@ -1,14 +1,14 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["flit_core>=3.9.0"]
+build-backend = "flit_core.buildapi"
 
 [project]
 name = "djazz-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "A CLI tool for Django development"
 readme = "README.md"
 requires-python = ">=3.12"
-license = "MIT"
+license = {file = "LICENSE"}
 authors = [
     { name = "Azat", email = "info@azat.ai" }
 ]
@@ -24,16 +24,3 @@ Repository = "https://github.com/djazzcc/cli"
 
 [project.scripts]
 dj = "djazz_cli.main:app"
-
-[tool.hatch.build.targets.wheel]
-packages = ["."]
-include = [
-    "djazz_cli/templates/**/*.py-tpl",
-    "djazz_cli/templates/**/__init__.py-tpl",
-]
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "djazz_cli/templates/**/*.py-tpl",
-    "djazz_cli/templates/**/__init__.py-tpl",
-] 

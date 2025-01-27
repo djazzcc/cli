@@ -78,6 +78,23 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Development
 
+### Setting Up Development Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/djazzcc/cli.git
+cd cli
+
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Unix/macOS
+# or
+.\.venv\Scripts\activate  # On Windows
+
+# Install development dependencies
+uv pip install -e .
+```
+
 ### Local Testing
 
 ```bash
@@ -95,8 +112,38 @@ source .venv/bin/activate  # On Unix/macOS
 cd ../..  # Go back to project root
 uv pip install -e .
 
+# Verify installation
+uv pip list | grep djazz-cli
+
 # Test the CLI
 cd sandbox/test1
 dj startproject myproject
+```
+
+### Project Structure
+```
+cli/
+├── djazz_cli/
+│   ├── __init__.py
+│   ├── main.py
+│   └── templates/
+│       ├── app_templates/
+│       │   └── default/
+│       └── project_templates/
+│           └── default/
+├── sandbox/          # For local testing (git ignored)
+├── pyproject.toml
+├── README.md
+└── .gitignore
+```
+
+### Building the Package
+
+```bash
+# Build both wheel and sdist
+uv build
+
+# The built packages will be in the dist/ directory
+ls dist/
 ```
 
