@@ -76,3 +76,27 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Development
+
+### Local Testing
+
+```bash
+# Create a sandbox test environment
+mkdir -p sandbox/test1
+cd sandbox/test1
+
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Unix/macOS
+# or
+.\.venv\Scripts\activate  # On Windows
+
+# Install the package in editable mode (from project root)
+cd ../..  # Go back to project root
+uv pip install -e .
+
+# Test the CLI
+cd sandbox/test1
+dj startproject myproject
+```
+

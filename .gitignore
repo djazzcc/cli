@@ -55,4 +55,8 @@ coverage.xml
 
 # Distribution
 dist/
-build/ 
+build/
+
+# Testing and sandbox
+sandbox/
+test_projects/ 
