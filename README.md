@@ -27,10 +27,14 @@ pip install djazz-cli
 dj startproject myproject
 
 # Create project with a specific template
-dj startproject myproject template_name
+dj startproject myproject -t custom_template
+# or
+dj startproject myproject --template custom_template
 
 # Create project in a specific directory
-dj startproject myproject template_name path/to/directory
+dj startproject myproject -t custom_template -p /path/to/directory
+# or
+dj startproject myproject --template custom_template --path /path/to/directory
 ```
 
 ### Creating a New App
@@ -40,25 +44,28 @@ dj startproject myproject template_name path/to/directory
 dj startapp myapp
 
 # Create app with a specific template
-dj startapp myapp template_name
+dj startapp myapp -t custom_template
+# or
+dj startapp myapp --template custom_template
 
 # Create app in a specific directory
-dj startapp myapp template_name path/to/directory
+dj startapp myapp -t custom_template -p /path/to/directory
+# or
+dj startapp myapp --template custom_template --path /path/to/directory
 ```
 
-## Motivation
+### Listing Available Templates
 
-The `django-admin` CLI is a powerful tool for managing Django projects, but it has some limitations:
+```bash
+# List all templates
+dj list-templates
 
-1. The default app template lacks common files like `urls.py`
-2. Project creation always creates a nested directory structure
-3. Template usage requires verbose command-line options
+# List only project templates
+dj list-templates project
 
-`djazz-cli` addresses these issues by:
-- Providing better default templates
-- Simplifying the command interface
-- Creating projects in the current directory by default
-- Making template usage more straightforward
+# List only app templates
+dj list-templates app
+```
 
 ## Templates
 
