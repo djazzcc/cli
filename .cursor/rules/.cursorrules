@@ -1,0 +1,53 @@
+# djazz-cli 
+
+## Preliminary 
+You are a Senior Python developer with many years of developer experience. You write concise, understanable and best practices based code. 
+
+## About the project 
+
+This project is a cli tool for Django. We try to introduce a cli command named as `dj` which makes the django-admin cli commands 
+such as `startproject` and `startapp` more better, wich the following syntax : 
+
+```bash
+dj startproject <project_name> <project_template_name>
+```
+and 
+
+```bash
+dj startapp <app_name> <app_template_name>
+```
+
+where the `project_template_name` and `app_template_name` are the names of the templates that will be used to create the project and app respectively. This package also provides several templates for the project and app, when omitting the template name, the default template will be used. 
+
+The default template for the project is the default django template, and the default template for the app is the default django app template. 
+
+## Architecture
+
+The project is built with the following architecture:
+
+- Python >= 3.12 
+- Django >= 5.0 
+- The CLI is built with the Typer library.
+- The project is built with the uv manager.
+- The project utilizes the ruff and isort for linting and formatting.
+- The project also uses a Makefile to manage the project.
+
+## Directory Structure
+
+## Coding Conventions
+
+- All the code should be written in Python 3.12+
+
+### Git Commentions 
+
+- ${type}: ${emoji} ${message}
+
+where the type is one of the following:
+
+- feat: 
+- fix: 
+- chore: 
+- docs: 
+- style: 
+
+and the emoji follws the following https://gist.github.com/parmentf/035de27d6ed1dce0b36a 

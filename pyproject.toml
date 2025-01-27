@@ -14,12 +14,26 @@ authors = [
 ]
 
 dependencies = [
-    "django>=5.0"
+    "django>=5.0",
+    "typer>=0.15.1"
 ]
 
 [project.urls]
 Homepage = "https://github.com/djazzcc/cli"
 Repository = "https://github.com/djazzcc/cli"
 
+[project.scripts]
+dj = "djazz_cli.main:app"
+
 [tool.hatch.build.targets.wheel]
-packages = ["."] 
+packages = ["."]
+include = [
+    "djazz_cli/templates/**/*.py-tpl",
+    "djazz_cli/templates/**/__init__.py-tpl",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "djazz_cli/templates/**/*.py-tpl",
+    "djazz_cli/templates/**/__init__.py-tpl",
+] 
