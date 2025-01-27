@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "djazz-cli"
+version = "0.1.0"
+description = "A CLI tool for Django development"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    { name = "Azat", email = "info@azat.ai" }
+]
+
+dependencies = [
+    "django>=5.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/djazzcc/cli"
+Repository = "https://github.com/djazzcc/cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."] 
