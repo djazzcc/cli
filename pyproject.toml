@@ -18,6 +18,10 @@ dependencies = [
     "typer>=0.15.1"
 ]
 
+[project.optional-dependencies]
+dev = [
+]
+
 [project.urls]
 Homepage = "https://github.com/djazzcc/cli"
 Repository = "https://github.com/djazzcc/cli"
