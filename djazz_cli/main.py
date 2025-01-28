@@ -92,12 +92,22 @@ def startproject(
                 )
             )
 
-            # Show next steps based on path
+            # Show next steps based on template and path
             typer.echo("\nNext steps:")
             if path != Path.cwd():
                 typer.echo(f"  cd {project_name}")
-            typer.echo("  python manage.py migrate")
-            typer.echo("  python manage.py runserver")
+            
+            if template == "wagtail":
+                typer.echo("  python -m pip install -r requirements.txt")
+                typer.echo("  python manage.py migrate")
+                typer.echo("  python manage.py createsuperuser")
+                typer.echo("  python manage.py runserver")
+                typer.echo("\nThen visit:")
+                typer.echo("  http://127.0.0.1:8000/admin/ - Wagtail admin interface")
+                typer.echo("  http://127.0.0.1:8000/ - Your new site")
+            else:
+                typer.echo("  python manage.py migrate")
+                typer.echo("  python manage.py runserver")
 
         except Exception as e:
             typer.echo(

@@ -71,6 +71,7 @@ dj list-templates app
 
 ### Project Templates
 - `default`: Enhanced version of Django's default project template
+- `wagtail`: Wagtail CMS project template with pre-configured settings
 
 ### App Templates
 - `default`: Extended app template with additional files (urls.py, etc.)
